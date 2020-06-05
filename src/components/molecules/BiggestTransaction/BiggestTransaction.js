@@ -18,7 +18,10 @@ class BiggestTransaction extends React.Component {
   };
 
   componentDidUpdate(prevProps) {
-    if (prevProps.transactions !== this.props.transactions) {
+    if (
+      prevProps.transactions !== this.props.transactions ||
+      prevProps.exchangeRate !== this.props.exchangeRate
+    ) {
       let biggest = this.biggest(this.props.transactions);
       this.setState({
         biggest,
@@ -37,12 +40,18 @@ class BiggestTransaction extends React.Component {
 
   render() {
     const { biggest } = this.state;
+    console.log(this.props);
     return (
       <Wrapper>
         <Paragraph>Biggest Transaction{this.biggest.name}</Paragraph>
-        <Paragraph>
-          {biggest.name} {biggest.amount} {biggest.calculatedAmount}
-        </Paragraph>
+        {biggest.amount && (
+          <Paragraph>
+            {`${biggest.name} ${biggest.amount} ${calculateAmount(
+              biggest.amount,
+              Number(this.props.exchangeRate),
+            )}`}
+          </Paragraph>
+        )}
       </Wrapper>
     );
   }
@@ -53,3 +62,5 @@ const mapStateToProps = (state) => {
 };
 
 export default connect(mapStateToProps)(BiggestTransaction);
+
+
