@@ -12,23 +12,41 @@ const Wrapper = styled.div`
   flex-direction: column;
 `;
 
-const BiggestTransaction = ({ transactions, exchangeRate }) => {
-  const biggest = transactions.reduce(
-    (max, current) => {
-      return current.amount >= max.amount ? current : max;
-    },
-    { amount: 0 },
-  );
+class BiggestTransaction extends React.Component {
+  state = {
+    biggest: {},
+  };
 
-  return (
-    <Wrapper>
-      <Paragraph>Biggest Transaction</Paragraph>
-      <Paragraph>
-        {biggest.name} {biggest.amount} {calculateAmount(biggest.amount, exchangeRate)}
-      </Paragraph>
-    </Wrapper>
-  );
-};
+  componentDidUpdate(prevProps) {
+    if (prevProps.transactions !== this.props.transactions) {
+      let biggest = this.biggest(this.props.transactions);
+      this.setState({
+        biggest,
+      });
+    }
+  }
+
+  biggest = (transactions) => {
+    return transactions.reduce(
+      (max, current) => {
+        return current.amount >= max.amount ? current : max;
+      },
+      { amount: 0 },
+    );
+  };
+
+  render() {
+    const { biggest } = this.state;
+    return (
+      <Wrapper>
+        <Paragraph>Biggest Transaction{this.biggest.name}</Paragraph>
+        <Paragraph>
+          {biggest.name} {biggest.amount} {biggest.calculatedAmount}
+        </Paragraph>
+      </Wrapper>
+    );
+  }
+}
 
 const mapStateToProps = (state) => {
   return state;
