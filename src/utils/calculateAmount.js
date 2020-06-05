@@ -1,0 +1,1 @@
+export const calculateAmount = (amount,exchangeRate) => (amount * exchangeRate).toFixed(2);
