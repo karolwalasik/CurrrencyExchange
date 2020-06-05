@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.js": "/karolwalasik.github.io/CurrencyExchange/static/js/main.362aec60.chunk.js",
+    "main.js.map": "/karolwalasik.github.io/CurrencyExchange/static/js/main.362aec60.chunk.js.map",
+    "runtime-main.js": "/karolwalasik.github.io/CurrencyExchange/static/js/runtime-main.4cba5750.js",
+    "runtime-main.js.map": "/karolwalasik.github.io/CurrencyExchange/static/js/runtime-main.4cba5750.js.map",
+    "static/js/2.c0afc23e.chunk.js": "/karolwalasik.github.io/CurrencyExchange/static/js/2.c0afc23e.chunk.js",
+    "static/js/2.c0afc23e.chunk.js.map": "/karolwalasik.github.io/CurrencyExchange/static/js/2.c0afc23e.chunk.js.map",
+    "index.html": "/karolwalasik.github.io/CurrencyExchange/index.html",
+    "precache-manifest.d651807a0bb8d81c1169a47f13ee02e0.js": "/karolwalasik.github.io/CurrencyExchange/precache-manifest.d651807a0bb8d81c1169a47f13ee02e0.js",
+    "service-worker.js": "/karolwalasik.github.io/CurrencyExchange/service-worker.js",
+    "static/js/2.c0afc23e.chunk.js.LICENSE.txt": "/karolwalasik.github.io/CurrencyExchange/static/js/2.c0afc23e.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4cba5750.js",
+    "static/js/2.c0afc23e.chunk.js",
+    "static/js/main.362aec60.chunk.js"
+  ]
+}
