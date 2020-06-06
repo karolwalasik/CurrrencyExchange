@@ -40,7 +40,6 @@ class BiggestTransaction extends React.Component {
 
   render() {
     const { biggest } = this.state;
-    console.log(this.props);
     return (
       <Wrapper>
         <Paragraph>Biggest Transaction{this.biggest.name}</Paragraph>
